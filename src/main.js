@@ -1,5 +1,5 @@
 require.config({
-  baseUrl: 'bower_components/',
+  baseUrl: 'src/',
   shim: {
     jquery: {
       exports: '$'
@@ -13,14 +13,19 @@ require.config({
     }
   },
   paths: {
-    'jquery': 'jquery/dist/jquery.min',
-    'underscore': 'underscore/underscore',
-    'Backbone': 'backbone/backbone'
+    'jquery': '../bower_components/jquery/dist/jquery.min',
+    'underscore': '../bower_components/underscore/underscore',
+    'Backbone': '../bower_components/backbone/backbone'
   }
 });
 
-require(['../src/base'], function(base) {
-  base.say('hehe');
-  base.findDom('body');
-  return base.showBackbone();
+require(['jquery', 'base', 'a', 'b', 'ab'], function($, base) {
+  return $(document).ready(function() {
+    sayA();
+    sayB();
+    sayAB();
+    base.say('hehe');
+    base.findDom('body');
+    return base.showBackbone();
+  });
 });

@@ -1,7 +1,7 @@
 define ['jquery', 'Backbone'], ($, B) ->
   return {
     say: (word) ->
-      alert "hello every one. --#{word}"
+      alert "hello require. --#{word}"
     findDom: (selector) ->
       console.info $(selector)
     showBackbone: () ->
