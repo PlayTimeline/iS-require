@@ -1,0 +1,20 @@
+{
+  "name": "iS-require",
+  "version": "0.1.0",
+  "homepage": "https://github.com/PlayTimeline/iS-require",
+  "authors": [
+    "sconfield <isconfield@gmail.com>"
+  ],
+  "description": "all in one",
+  "main": "main.coffee",
+  "keywords": [
+    "require",
+    "sconfield"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "requirejs": "~2.1.11",
+    "jquery": "~2.1.0"
+  }
+}
