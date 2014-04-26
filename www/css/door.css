@@ -1,0 +1,28 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+.door {
+  background-color: yellow;
+  height: 100%;
+  width: 50%;
+  display: inline-block;
+  position: fixed;
+  z-index: 999;
+}
+.door-left {
+  left: 0;
+}
+.door-right {
+  right: 0;
+  float: right;
+}
+.door-textarea {
+  text-align: center;
+}
+.door-textarea h1 {
+  color: red;
+  font-weight: bold;
+  cursor: help;
+}

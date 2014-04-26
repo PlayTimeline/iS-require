@@ -3,11 +3,22 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          'src/main.js': 'src/main.coffee',
-          'src/base.js': 'src/base.coffee'
+          'www/js/config.js': 'www/coffee/config.coffee',
+          'www/js/main.js': 'www/coffee/main.coffee',
+          'www/js/door.js': 'www/coffee/door.coffee'
         options:
           bare: true
+    less:
+      compile:
+        files:
+          'www/css/door.css': 'www/less/door.less'
+    watch:
+      scripts:
+        files: ['www/coffee/*.coffee', 'www/less/*.less']
+        tasks: ['coffee', 'less']
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-less'
+  grunt.loadNpmTasks 'grunt-contrib-watch'
 
-  grunt.registerTask 'default', ['coffee']
+  grunt.registerTask 'default', ['coffee', 'less']

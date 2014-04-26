@@ -22,6 +22,8 @@
   "homepage": "https://github.com/PlayTimeline/iS-require",
   "devDependencies": {
     "grunt": "^0.4.4",
-    "grunt-contrib-coffee": "^0.10.1"
+    "grunt-contrib-coffee": "^0.10.1",
+    "grunt-contrib-less": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1"
   }
 }
