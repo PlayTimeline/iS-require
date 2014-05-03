@@ -1,8 +1,14 @@
-define ['jquery', 'js/door'], ($, Door) ->
+define ['jquery','js/door',
+  'js/todo/view/todoView',
+  'backbone',
+  'js/todo/route/todoRouter',
+  'js/todo'],($,Door,TodoView,Backbone,TodoRouter) ->
   Door.init()
 
-  $('body').click () ->
+  $('body').dblclick () ->
     Door.open()
 
-  $('h1').mouseover () ->
-    Door.close()
+  # backbone coming soon
+  todoView = new TodoView()
+  router   = new TodoRouter()
+  Backbone.history.start()

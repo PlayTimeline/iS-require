@@ -1,6 +1,6 @@
 define(['jquery'], function($) {
   var $door, DOOR_DIV, OPEN_AND_CLOSE_TIME, doorway;
-  OPEN_AND_CLOSE_TIME = 5000;
+  OPEN_AND_CLOSE_TIME = 800;
   DOOR_DIV = '<div class="door door-left"></div><div class="door door-right"></div>';
   $door = void 0;
   doorway = void 0;
@@ -25,3 +25,5 @@ define(['jquery'], function($) {
     }
   };
 });
+
+//# sourceMappingURL=door.js.map

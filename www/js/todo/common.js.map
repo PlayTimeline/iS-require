@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "common.js",
+  "sourceRoot": "..\\..\\coffee\\todo\\",
+  "sources": [
+    "common.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA,MAAA,CAAO,SAAA,GAAA;AACL,SAAO;AAAA,IACL,SAAA,EAAW,EADN;AAAA,IAEL,OAAA,EAAS,EAFJ;AAAA,IAGL,UAAA,EAAY,EAHP;AAAA,IAIL,QAAA,EAAU,EAJL;GAAP,CADK;AAAA,CAAP,CAAA,CAAA"
+}

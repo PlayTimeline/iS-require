@@ -2,17 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>go</title>
-  <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap-theme.css">
-  <link rel="stylesheet" type="text/css" href="css/door.css">
+  <title>go go go</title>
+  <link rel="stylesheet" type="text/css" href="css/style.min.css">
   <script data-main="js/config" src="lib/requirejs/require.js"></script>
+  <script id="taskListTempl" type="text/template">
+    <% _.each(taskList, function(task, i){ %>
+      <li>
+        <input id="task_<%= i %>" type="checkbox">
+        <label for="task_<%= i %>"><%= task.text %></label>
+      </li>
+    <% }); %>
+  </script>
+  <!-- backbone coming soon -->
+  <script type="text/template" id="task-template">
+    <div class="view">
+      <input class="toggle" type="checkbox" <%= done ? 'checked' : '' %>>
+      <label><%- text %></label>
+      <button class="destroy"></button>
+    </div>
+    <input class="edit" value="<%- text %>">
+  </script>
+  <script type="text/template" id="stats-template">
+    <span id="todoCount"><strong><%= remainingCount %></strong> 件未完成任务</span>
+    <ul id="todoFilters">
+      <li>
+        <a class="selected" href="#/">所有</a>
+      </li>
+      <li>
+        <a href="#/active">进行中</a>
+      </li>
+      <li>
+        <a href="#/done">已完成</a>
+      </li>
+    </ul>
+    <% if (doneCount) { %>
+    <button id="clearDone">清空已完成的 <%= doneCount %> 件任务</button>
+    <% } %>
+  </script>
 </head>
 <body>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4 door-textarea">
-      <h1>敢不敢跟意中人说喜欢你？</h1>
+  <div class="row" id="todo">
+    <div class="col-md-6 col-md-offset-3 door-textarea">
+    <h1><a href="#/byebye">敢</a>不敢跟意中人说<a href="#/like/you">喜欢你</a>？</h1>
+      <div class="col-xs-10">
+        <input class="form-control input-lg" id="taskIpt" type="text">
+      </div>
+      <button class="btn btn-info btn-lg" id="taskBtn" type="button">添加</button>
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+      <ul id="taskUl"></ul>
     </div>
   </div>
+  <!-- backbone coming soon -->
+  <section id="todoApp">
+    <header id="todoHeader">
+      <h1>to do</h1>
+      <input id="todoNew" placeholder="有什么任务安排吗？" autofocus>
+    </header>
+    <section id="todoMain">
+      <input id="toggleAll" type="checkbox">
+      <label for="toggleAll">完成所有任务</label>
+      <ul id="todoList"></ul>
+    </section>
+    <footer id="todoFooter"></footer>
+  </section>
+  <footer id="todoInfo">
+    <p>双击任务编辑</p>
+    <p>Written by <a href="https://github.com/addyosmani">sconfild</a></p>
+    <p>抄袭至 <a href="http://todomvc.com">涂毒我们为啥</a></p>
+  </footer>
 </body>
 </html>

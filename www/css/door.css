@@ -26,3 +26,6 @@ body {
   font-weight: bold;
   cursor: help;
 }
+.door-textarea h1 a:hover {
+  color: orange;
+}
